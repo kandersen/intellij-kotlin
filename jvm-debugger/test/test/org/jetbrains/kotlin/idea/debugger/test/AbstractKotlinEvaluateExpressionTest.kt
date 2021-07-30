@@ -235,16 +235,6 @@ abstract class AbstractKotlinEvaluateExpressionTest : KotlinDescriptorTestCaseWi
         }
     }
 
-    override fun initOutputChecker(): OutputChecker {
-        return KotlinOutputChecker(
-            getTestDataPath(),
-            testAppPath,
-            appOutputPath,
-            targetBackend(),
-            getExpectedOutputFile()
-        )
-    }
-
     override fun throwExceptionsIfAny() {
         if (exceptions.isNotEmpty()) {
             val outputFile = getExpectedOutputFile()
